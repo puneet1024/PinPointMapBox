@@ -2,10 +2,12 @@ package com.example.puneet.gotennatest
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import com.example.puneet.gotennatest.adapter.MainAdapter
 import com.example.puneet.gotennatest.viewmodels.MainActivityViewModels
 import com.mapbox.mapboxsdk.Mapbox
@@ -14,7 +16,7 @@ import com.mapbox.mapboxsdk.maps.MapView
 import com.mapbox.mapboxsdk.maps.MapboxMap
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), MainAdapter.OnItemListener {
     private val TAG = MainActivity::class.qualifiedName
     private lateinit var mapView:MapView
     private lateinit var map: MapboxMap
@@ -33,17 +35,25 @@ class MainActivity : AppCompatActivity() {
         mainActivityViewModels!!.init()
 
         mainActivityViewModels!!.getLocationRepository()?.observe(this, Observer { mainActivityViewModels ->
-            adapter = MainAdapter(this@MainActivity, mainActivityViewModels!!)
+            adapter = MainAdapter(this@MainActivity, mainActivityViewModels!!,this)
             recyclerView!!.setLayoutManager(LinearLayoutManager(this@MainActivity))
             recyclerView!!.setAdapter(adapter)
             adapter!!.notifyDataSetChanged()
             })
+
 
 //        mapView = findViewById(R.id.mapView)
 //        mapView.onCreate(savedInstanceState);
 //        mapView.getMapAsync { mapboxMap ->
 //            map = mapboxMap
 //        }
+    }
+
+    override fun onItemClick(position: Int) {
+        // navigate to another activity
+        Log.d(TAG,"inside onClick ")
+        val intent = Intent(this,MapActivity::class.java)
+        startActivity(intent)
     }
 //    fun fetchJson() {
 //        Log.d(TAG,"inside fetch json")

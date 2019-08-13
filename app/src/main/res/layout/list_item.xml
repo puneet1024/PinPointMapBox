@@ -4,7 +4,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="150dp">
+    android:layout_height="150dp"
+    android:paddingBottom="10dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:backgroundTint="@color/mapbox_blue">
 
     <TextView
         android:id="@+id/name"
@@ -16,6 +20,9 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:text="name"
+        android:paddingLeft="20dp"
+        android:textSize="15sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -24,10 +31,12 @@
         android:id="@+id/latitude"
         android:layout_width="98dp"
         android:layout_height="29dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="4dp"
+        android:paddingLeft="8dp"
         android:text="Latitude"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/name" />
 
@@ -35,27 +44,32 @@
         android:id="@+id/longitude"
         android:layout_width="98dp"
         android:layout_height="26dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="4dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
+        android:paddingLeft="8dp"
         android:text="Longitude"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/description"
         app:layout_constraintEnd_toStartOf="@+id/latitude"
-        app:layout_constraintHorizontal_bias="0.338"
+        app:layout_constraintHorizontal_bias="0.157"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/description"
-        android:layout_width="0dp"
+        android:layout_width="357dp"
         android:layout_height="39dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
+        android:paddingLeft="20dp"
         android:text="Description"
+        android:textSize="15sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
