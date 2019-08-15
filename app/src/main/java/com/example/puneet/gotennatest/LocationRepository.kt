@@ -15,6 +15,7 @@ class LocationRepository: ViewModel() {
         val locationService = ServiceBuilder.buildService(LocationService::class.java)
         val requestCall = locationService.getLocationList()
         val locationList = MutableLiveData<List<Data>>()
+        val dataDao:DataDao
         Log.d(TAG,"requestCall " + requestCall)
         requestCall.enqueue(object : retrofit2.Callback<List<Data>> {
             override fun onResponse(call: retrofit2.Call<List<Data>>?, response: retrofit2.Response<List<Data>>?) {
@@ -30,6 +31,7 @@ class LocationRepository: ViewModel() {
         })
         return locationList
     }
+
     companion object {
 
         private var locationRepository: LocationRepository? = null

@@ -9,17 +9,18 @@ import com.example.puneet.gotennatest.models.Data;
 
 @Database(entities = {Data.class}, version = 1)
 public abstract class AppDatabase extends RoomDatabase {
-    private static AppDatabase INSTANCE;
+    private static AppDatabase instance;
 
+    // Singleton pattern
     public static AppDatabase getDatabase(Context context) {
-        if (INSTANCE == null) {
-            INSTANCE =
+        if (instance == null) {
+            instance =
                     Room.databaseBuilder(context.getApplicationContext(), AppDatabase.class, "data_db")
                             .build();
         }
-        return INSTANCE;
+        return instance;
     }
 
-    public abstract DataDao itemAndPersonModel();
+    public abstract DataDao dataDao();
 
 }

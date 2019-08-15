@@ -13,4 +13,6 @@ import android.arch.persistence.room.PrimaryKey
  * @property description description about the location
  */
 @Entity
-data class Data(@PrimaryKey(autoGenerate = true) var id: Int, var name: String, var latitude: Float, var longitude: Float, var description: String)
+data class Data(@PrimaryKey(autoGenerate = true) var id: Int, var name: String, var latitude: Float, var longitude: Float, var description: String) {
+        constructor() : this(0, "", 0.0F, 0.0F, "")
+}

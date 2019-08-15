@@ -12,8 +12,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         mapbox:mapbox_renderTextureMode="true"
+        mapbox:mapbox_cameraTargetLat = "40.005"
+        mapbox:mapbox_cameraTargetLng = "-73.00"
         mapbox:mapbox_styleUrl="mapbox://styles/mapbox/streets-v10"
-        mapbox:mapbox_cameraZoom="1" />
+        mapbox:mapbox_cameraZoom="5" />
 
 
 </android.support.constraint.ConstraintLayout>

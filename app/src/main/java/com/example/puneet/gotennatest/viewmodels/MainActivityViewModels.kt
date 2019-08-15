@@ -22,4 +22,5 @@ class MainActivityViewModels: ViewModel() {
     fun getLocationRepository(): LiveData<List<Data>>? {
         return mutableLiveData
     }
+
 }
