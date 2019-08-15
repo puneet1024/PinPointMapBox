@@ -1,11 +1,11 @@
-package com.example.puneet.gotennatest;
+package com.example.puneet.gotennatest.models;
 
 import android.arch.persistence.room.Database;
 import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
 
-import com.example.puneet.gotennatest.models.Data;
+import com.example.puneet.gotennatest.DataDao;
 
 @Database(entities = {Data.class}, version = 1)
 public abstract class AppDatabase extends RoomDatabase {

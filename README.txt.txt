@@ -1,0 +1,5 @@
+- Spent approximately two days to complete the assignment
+- Accessed Pin Data using Retrofit and OkHttp - the working code uses Retrofit, but I have OkHttp commented out as well
+- Used MVVM architecture to build the application and taking the help of LiveData and Room Database for configuration changes and data persistence
+- Created a RecyclerView to implement the list of Pins 
+- Showcased the Pin along with the info box that holds the name of the place
