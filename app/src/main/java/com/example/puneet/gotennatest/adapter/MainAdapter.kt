@@ -21,16 +21,14 @@ class MainAdapter(val data: MainActivity, private val arrayList: List<Data>, onI
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomViewHolder {
-        Log.d(TAG, "inside on create ViewHolder")
-        val layoutInflater = LayoutInflater.from(parent?.context)
+        val layoutInflater = LayoutInflater.from(parent.context)
         val cellForRow = layoutInflater.inflate(R.layout.list_item, parent, false)
         return CustomViewHolder(cellForRow,mOnItemListener)
     }
 
     override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
-        Log.d(TAG, "inside on bind ViewHolder")
         val data: Data = arrayList.get(position)
-        holder?.bind(data)
+        holder.bind(data)
     }
 
     class CustomViewHolder(view: View, onItemListener: OnItemListener) : RecyclerView.ViewHolder(view), View.OnClickListener {
